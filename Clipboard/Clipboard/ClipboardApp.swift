@@ -21,9 +21,9 @@ struct ClipboardApp: App {
         
         MenuBarExtra(currentNumber, systemImage: "\(currentNumber).circle") {
             
-            let read = pasteboard.pasteboardItems?.first?.string(forType: .string)
+            //let read = pasteboard.pasteboardItems?.first?.string(forType: .string)
             
-            Button(read!) {
+            Button("currentNumber") {
                 currentNumber = "1"
             }
             Divider()
