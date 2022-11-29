@@ -12,22 +12,24 @@ struct ClipboardApp: App {
     
     @State var currentNumber: String = "1"
     
+
+    
     var body: some Scene {
         
+        let pasteboard = NSPasteboard.general
+        
+        
         MenuBarExtra(currentNumber, systemImage: "\(currentNumber).circle") {
-            Button("One") {
+            
+            let read = pasteboard.pasteboardItems?.first?.string(forType: .string)
+            
+            Button(read!) {
                 currentNumber = "1"
-            }
-            Button("Two") {
-                currentNumber = "2"
-            }
-            Button("Three") {
-                currentNumber = "3"
             }
             Divider()
             
             Button("Reset"){
-                
+                pasteboard.clearContents()
             }
             
             Button("Preferences"){
