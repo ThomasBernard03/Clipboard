@@ -10,22 +10,22 @@ import SwiftUI
 @main
 struct ClipboardApp: App {
     
-    @State var currentNumber: String = "1"
-    
-
+    @State var currentItem: String = "1"
     
     var body: some Scene {
         
         let pasteboard = NSPasteboard.general
         
-        
-        MenuBarExtra(currentNumber, systemImage: "\(currentNumber).circle") {
+        MenuBarExtra("1", systemImage: "\("1").circle") {
             
-            //let read = pasteboard.pasteboardItems?.first?.string(forType: .string)
+            let read : String = pasteboard.pasteboardItems?.first?.string(forType: .string) ?? ""
             
-            Button("currentNumber") {
-                currentNumber = "1"
+            
+            Button(read) {
+                pasteboard.clearContents()
+                pasteboard.setString(read, forType: .string)
             }
+
             Divider()
             
             Button("Reset"){
