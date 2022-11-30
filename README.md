@@ -9,3 +9,7 @@
 
 
 ## ⚡️ Installation
+
+You can download the .app file on this link : [app-center.ms](https://install.appcenter.ms/users/thomas.bernard.310-gmail.com/apps/Clipboard).
+
+Unzip the folder and grap Clipboard.app into Applications folder.
