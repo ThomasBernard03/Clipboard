@@ -1,5 +1,3 @@
-# Clipboard!
-
 <p align="center">
   <img width="300" alt="Clipboard logo" src="https://user-images.githubusercontent.com/67638928/204757473-c906cb3d-0c0c-469b-a2d4-5a140577c227.png"/>
 </p>
