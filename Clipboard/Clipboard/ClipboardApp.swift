@@ -6,30 +6,41 @@
 //
 
 import SwiftUI
+import Foundation
 
 @main
 struct ClipboardApp: App {
     
-    @State var currentItem: String = "1"
-    @State var history : [String] = ["1", "2", "3"]
+    @NSApplicationDelegateAdaptor var delegate: AppDelegate
+    
+    //@State var currentItem: String = delegate.lastItem
+    
+    var lastChangeCount: Int = 0
+    var history : [String] = [""]
+    
     
     var body: some Scene {
         
         let pasteboard = NSPasteboard.general
         
-        MenuBarExtra("1", systemImage: "\("1").circle") {
+        MenuBarExtra("1", systemImage: "\(self.delegate.history.capacity).circle") {
+            
+            Button(delegate.lastItem){
+                pasteboard.clearContents()
+                pasteboard.setString(delegate.lastItem, forType: .string)
+            }
             
             let read : String = pasteboard.pasteboardItems?.first?.string(forType: .string) ?? ""
             
-            ForEach(0..<history.capacity){ item in
-                Button(history[item]) {
+            ForEach(0..<self.delegate.history.capacity){ item in
+                Button(self.delegate.history[item]) {
                     pasteboard.clearContents()
-                    pasteboard.setString(read, forType: .string)
+                    pasteboard.setString(self.delegate.history[item], forType: .string)
+                    
+                    //history.insert(history[item], at: 0)
                 }
             }
             
-            
-
             Divider()
             
             Button("Reset"){
@@ -48,5 +59,9 @@ struct ClipboardApp: App {
                 NSApplication.shared.terminate(nil)
             }.keyboardShortcut("q")
         }
+        
+        
     }
 }
+
+

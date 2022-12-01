@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		816E32E029391A950007019C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E32DF29391A950007019C /* AppDelegate.swift */; };
+		816E32E22939385B0007019C /* ClipboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816E32E12939385B0007019C /* ClipboardService.swift */; };
 		81E0CF7E2936654900930320 /* ClipboardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E0CF7D2936654900930320 /* ClipboardApp.swift */; };
 		81E0CF802936654900930320 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E0CF7F2936654900930320 /* ContentView.swift */; };
 		81E0CF822936654B00930320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E0CF812936654B00930320 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		816E32DF29391A950007019C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		816E32E12939385B0007019C /* ClipboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardService.swift; sourceTree = "<group>"; };
 		81E0CF7A2936654900930320 /* Clipboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clipboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E0CF7D2936654900930320 /* ClipboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardApp.swift; sourceTree = "<group>"; };
 		81E0CF7F2936654900930320 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		81E0CF7C2936654900930320 /* Clipboard */ = {
 			isa = PBXGroup;
 			children = (
+				816E32E12939385B0007019C /* ClipboardService.swift */,
+				816E32DF29391A950007019C /* AppDelegate.swift */,
 				81E0CF7D2936654900930320 /* ClipboardApp.swift */,
 				81E0CF7F2936654900930320 /* ContentView.swift */,
 				81E0CF812936654B00930320 /* Assets.xcassets */,
@@ -139,7 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816E32E029391A950007019C /* AppDelegate.swift in Sources */,
 				81E0CF802936654900930320 /* ContentView.swift in Sources */,
+				816E32E22939385B0007019C /* ClipboardService.swift in Sources */,
 				81E0CF7E2936654900930320 /* ClipboardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
