@@ -11,6 +11,7 @@ import SwiftUI
 struct ClipboardApp: App {
     
     @State var currentItem: String = "1"
+    @State var history : [String] = ["1", "2", "3"]
     
     var body: some Scene {
         
@@ -20,11 +21,14 @@ struct ClipboardApp: App {
             
             let read : String = pasteboard.pasteboardItems?.first?.string(forType: .string) ?? ""
             
-            
-            Button(read) {
-                pasteboard.clearContents()
-                pasteboard.setString(read, forType: .string)
+            ForEach(0..<history.capacity){ item in
+                Button(history[item]) {
+                    pasteboard.clearContents()
+                    pasteboard.setString(read, forType: .string)
+                }
             }
+            
+            
 
             Divider()
             
